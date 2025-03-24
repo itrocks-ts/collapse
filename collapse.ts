@@ -1,5 +1,5 @@
 
-export default function collapse(element: HTMLElement, closestSelector = '')
+export function collapse(element: HTMLElement, closestSelector = '')
 {
 	const anchors = document.body.querySelectorAll('.app.menu a')
 
