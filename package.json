@@ -16,6 +16,9 @@
 	],
 	"homepage": "https://it.rocks",
 	"keywords": [
+		"collapse",
+		"css-class",
+		"dropdown",
 		"front-end",
 		"it.rocks"
 	],
@@ -31,5 +34,5 @@
 	},
 	"type": "module",
 	"types": "./collapse.d.ts",
-	"version": "0.0.7"
+	"version": "0.0.8"
 }
