@@ -5,8 +5,7 @@
 	},
 	"description": "Handles adding and removing the 'collapse' class on a .app.menu",
 	"devDependencies": {
-		"@types/node": "^24.10",
-		"typescript": "~5.9"
+		"typescript": "^6.0"
 	},
 	"files": [
 		"LICENSE",
@@ -23,7 +22,6 @@
 		"it.rocks"
 	],
 	"license": "ISC",
-	"module": "./collapse.js",
 	"name": "@itrocks/collapse",
 	"repository": {
 		"type": "git",
@@ -32,7 +30,5 @@
 	"scripts": {
 		"build": "tsc"
 	},
-	"type": "module",
-	"types": "./collapse.d.ts",
-	"version": "0.0.8"
+	"version": "0.1.0"
 }
