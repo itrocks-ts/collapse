@@ -5,7 +5,7 @@
 	},
 	"description": "Handles adding and removing the 'collapse' class on a .app.menu",
 	"devDependencies": {
-		"typescript": "^6.0"
+		"typescript": "^7.0"
 	},
 	"files": [
 		"LICENSE",
@@ -30,5 +30,5 @@
 	"scripts": {
 		"build": "tsc"
 	},
-	"version": "0.1.0"
+	"version": "0.1.1"
 }
