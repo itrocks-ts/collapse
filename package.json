@@ -3,7 +3,7 @@
 		"name": "Baptiste Pillot",
 		"email": "baptiste@pillot.fr"
 	},
-	"description": "Handles adding and removing the 'collapse' class on a .app.menu",
+	"description": "Toggles responsive collapsed and expanded state classes in the browser",
 	"devDependencies": {
 		"typescript": "^7.0"
 	},
@@ -15,11 +15,13 @@
 	],
 	"homepage": "https://it.rocks",
 	"keywords": [
+		"browser",
 		"collapse",
 		"css-class",
-		"dropdown",
 		"front-end",
-		"it.rocks"
+		"it.rocks",
+		"navigation",
+		"responsive"
 	],
 	"license": "ISC",
 	"name": "@itrocks/collapse",
@@ -28,7 +30,8 @@
 		"url": "git+https://github.com/itrocks-ts/collapse.git"
 	},
 	"scripts": {
-		"build": "tsc"
+		"build": "tsc",
+		"test": "npm run build && node --test test/*.test.mjs"
 	},
-	"version": "0.1.1"
+	"version": "0.2.0"
 }

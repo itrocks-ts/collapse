@@ -1,29 +1,36 @@
 
+
+const COLLAPSE_CLASS           = 'collapse'
+const EXPAND_CLASS             = 'expand'
+const SMALL_VIEWPORT_MAX_WIDTH = 600
+
+function isSmallViewport()
+{
+	return window.innerWidth <= SMALL_VIEWPORT_MAX_WIDTH
+}
+
 export function collapse(element: HTMLElement, closestSelector = '')
 {
-	const anchors = document.body.querySelectorAll('.app.menu a')
+	const closestElement = (element: HTMLElement) =>
+		(closestSelector.length ? element.closest(closestSelector) : null) ?? element.parentElement ?? element
+	const container = closestElement(element)
+	const anchors   = container.querySelectorAll('a')
 
 	anchors.forEach(anchor => anchor.addEventListener('click', () => {
-		if (window.innerWidth <= 600) {
-			element.click()
+		if (isSmallViewport()) {
+			container.classList.remove(EXPAND_CLASS)
 		}
 	}))
 
-	const closestElement = (element: HTMLElement) =>
-		(closestSelector.length ? element.closest(closestSelector) : null) ?? element.parentElement ?? element
-
-	element.addEventListener('click', function() {
-		const nav      = closestElement(this)
-		const navClass = nav.classList
-		if (navClass.contains('collapse')) {
-			navClass.remove('collapse')
+	element.addEventListener('click', () => {
+		const containerClass = container.classList
+		if (isSmallViewport()) {
+			containerClass.remove(COLLAPSE_CLASS)
+			containerClass.toggle(EXPAND_CLASS)
 		}
 		else {
-			navClass.add('collapse')
+			containerClass.remove(EXPAND_CLASS)
+			containerClass.toggle(COLLAPSE_CLASS)
 		}
 	})
-
-	if (window.innerWidth <= 600) {
-		element.click()
-	}
 }
